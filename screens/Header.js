@@ -1,14 +1,11 @@
 import React from 'react';
-import { Button, Image, View, Text } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import {Button, Image, View, Text} from 'react-native';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 
 class LogoTitle extends React.Component {
   render() {
     return (
-      <Image
-        source={require('./spiro.png')}
-        style={{ width: 30, height: 30 }}
-      />
+      <Image source={require('./spiro.png')} style={{width: 30, height: 30}} />
     );
   }
 }
@@ -27,7 +24,7 @@ class HomeScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>Home Screen</Text>
         <Button
           title="Go to Details"
@@ -45,8 +42,8 @@ class HomeScreen extends React.Component {
 }
 
 class DetailsScreen extends React.Component {
-  static navigationOptions = ({ navigation, navigationOptions }) => {
-    const { params } = navigation.state;
+  static navigationOptions = ({navigation, navigationOptions}) => {
+    const {params} = navigation.state;
 
     return {
       title: params ? params.otherParam : 'A Nested Details Screen',
@@ -60,19 +57,20 @@ class DetailsScreen extends React.Component {
 
   render() {
     /* 2. Read the params from the navigation state */
-    const { params } = this.props.navigation.state;
+    const {params} = this.props.navigation.state;
     const itemId = params ? params.itemId : null;
     const otherParam = params ? params.otherParam : null;
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Text>Details Screen</Text>
         <Text>itemId: {JSON.stringify(itemId)}</Text>
         <Text>otherParam: {JSON.stringify(otherParam)}</Text>
         <Button
           title="Update the title"
           onPress={() =>
-            this.props.navigation.setParams({ otherParam: 'Updated!' })}
+            this.props.navigation.setParams({otherParam: 'Updated!'})
+          }
         />
         <Button
           title="Go to Details... again"
