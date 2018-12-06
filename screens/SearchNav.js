@@ -14,6 +14,12 @@ export default class SearchNav extends Component {
 			<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
 				
 				<Text>Search</Text>
+				<Text>
+					Numpang nambah search gan!
+				</Text>
+				<Text>
+					Test branch
+				</Text>
 			</View>
 		);
 	}
