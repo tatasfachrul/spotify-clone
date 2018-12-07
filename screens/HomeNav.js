@@ -13,7 +13,9 @@ import {ScrollView, SectionList, StyleSheet} from 'react-native';
 
 export default class HomeNav extends Component {
   static navigationOptions = {
-    tabBarIcon: ({tintColor}) => <Icon name="md-home" />,
+    tabBarIcon: ({tintColor}) => (
+      <Icon name="md-home" style={{color: '#789456'}} />
+    ),
   };
 
   render() {
@@ -28,7 +30,9 @@ export default class HomeNav extends Component {
 
           <View style={{flexDirection: 'row'}}>
             <Card transparent>
-              <ScrollView horizontal="true" showsHorizontalScrollIndicator={false}>
+              <ScrollView
+                horizontal="true"
+                showsHorizontalScrollIndicator={false}>
                 <CardItem>
                   <Thumbnail large source={require(`../assets/img/moon.jpg`)} />
                 </CardItem>
@@ -70,7 +74,9 @@ export default class HomeNav extends Component {
           </View>
           <View style={{flexDirection: 'row'}}>
             <Card transparent>
-              <ScrollView horizontal="true" showsHorizontalScrollIndicator={false}>
+              <ScrollView
+                horizontal="true"
+                showsHorizontalScrollIndicator={false}>
                 <CardItem>
                   <Thumbnail large source={require(`../assets/img/moon.jpg`)} />
                 </CardItem>
