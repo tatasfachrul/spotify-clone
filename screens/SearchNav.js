@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Icon, View, Text} from 'native-base';
+import {Icon, Text, Container, Header, Item, Input, Content, Card, CardItem, CardSwiper} from 'native-base';
 
 export default class SearchNav extends Component {
   static navigationOptions = {
@@ -8,11 +8,33 @@ export default class SearchNav extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Search</Text>
-        <Text>Numpang nambah search gan!</Text>
-        <Text>Test branch</Text>
-      </View>
+      <Container>
+        <Header searchBar>
+          
+          <Item>
+            <Icon name="md-search" />
+            <Input placholder="Search your favorite song!" />
+          </Item>
+        </Header>
+        <Content style={styles.sectionTitle}>
+          <Text>
+            here is the content
+          </Text>
+          <Card>
+            <CardItem>
+              <CardSwiper>
+                
+              </CardSwiper>
+            </CardItem>
+          </Card>
+        </Content>
+      </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  sectionTitle: {
+    paddingTop: 20
+  }
+})
